@@ -1,0 +1,174 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~ Font faces ~~~~~~~~~~~~~~~~~~~~~~~*/
+@font-face {
+  font-family: "aleo_headings";
+  src: url("resources/fonts/Aleo-Regular-webfont.eot");
+  src: url("resources/fonts/Aleo-Regular-webfont.eot?#iefix") format("embedded-opentype"),
+    url("resources/fonts/Aleo-Regular-webfont.woff") format("woff"),
+    url("resources/fonts/Aleo-Regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "contra_body";
+  src: url("resources/fonts/contra-webfont.eot");
+  src: url("resources/fonts/contra-webfont.eot?#iefix") format("embedded-opentype"),
+    url("resources/fonts/contra-webfont.woff") format("woff"),
+    url("resources/fonts/contra-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~ Text setup ~~~~~~~~~~~~~~~~~~~~~~~*/
+* {
+  box-sizing: border-box; /*for sizing*/
+}
+html {
+  font-size: 10px; /*setting the root font size*/
+}
+body {
+  font-family: "contra_body", "Times New Roman", Times, serif; /*serif font for body*/
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+  font-size: 1.9rem; /*1.9rem seems like a good font size*/
+  background-color: #f3f1f1; /* off-white*/
+  color: #221e1e; /*off-black*/
+}
+p,
+li {
+  line-height: 1.5;
+  letter-spacing: 0.01rem;
+  word-spacing: 0.22rem; /*slight spacing, it didn't need much.*/
+}
+section > p::first-line {
+  text-indent: 2rem; /*first line of paragraphs indented*/
+}
+section > p:last-of-type::first-line {
+  text-indent: 0rem; /*except for the paragraph above the ordered list*/
+}
+h1,
+h2 {
+  font-family: "aleo_headings", "Times New Roman", Times, serif; /*slab serif font for headers*/
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  font-size: 4.8rem;
+  letter-spacing: 0.7rem; /*a lot of spacing & size for h1*/
+}
+h2 {
+  font-size: 3rem;
+  letter-spacing: 0.1rem; /*slight spacing for h2*/
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~ Links ~~~~~~~~~~~~~~~~~~~~~~~*/
+
+a,
+a:link {
+  color: #a86661;
+  outline: none; /*basic link colour, removed outline*/
+}
+a:visited {
+  color: #8f7c7b; /*desaturated colour for visited links*/
+}
+a:focus,
+a:hover,
+a:active {
+  font-weight: bold;
+  color: #b3342b;
+  text-decoration: none; /*hover, focus, active boldens and makes the text red & no underline*/
+}
+a::after {
+  content: "";
+  position: relative;
+  padding: 0.5rem;
+  background-image: url("resources/images/external-link-52.png");
+  top: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat; /*Added a new element after anchor tags for external links*/
+}
+a[href="#"]::after {
+  padding: 0;
+  top: 0;
+  background-image: none; /*removed this element for local links*/
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~ Lists ~~~~~~~~~~~~~~~~~~~~~~~*/
+aside ul {
+  list-style: lower-roman; /*formal school list style*/
+}
+section ul {
+  list-style: square; /*square bulltes look formal*/
+}
+section ol {
+  list-style: decimal; /*1, 2, 3 as steps makes sense*/
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~ Navigation ~~~~~~~~~~~~~~~~~~~~~~~*/
+nav {
+  background-color: #a66a66;
+  padding: 0;
+  float: left;
+  width: 20%;
+  padding-bottom: 50rem; /*background is tall as to fill page height*/
+}
+nav ul {
+  padding: 0; /*removed pading from ul*/
+}
+nav ul li {
+  margin: 22px 0px 22px 0px;
+  list-style: none; /*remove list style, spaced li*/
+}
+nav ul li:nth-child(even) {
+  background-color: #d3948fcc; /*even backgrounds light*/
+}
+nav ul li:nth-child(odd) {
+  background-color: #d3948f88; /*odd backgrounds dark*/
+}
+
+nav li:focus,
+nav li:hover {
+  box-shadow: 0 4px 20px inset #11111144; /*inner shadow to hover, focus list items*/
+}
+nav a,
+nav a:link,
+nav a:visited,
+nav a:focus,
+nav a:hover,
+nav a:active {
+  font-family: "aleo_headings", "Times New Roman", Times, serif;
+  font-size: 3rem;
+  text-decoration: none;
+  border-right: 19rem solid #00000000;
+  border-left: 2rem solid #00000000;
+  color: #221e1e; /*nav anchors look all the same aside from bold on hover. 
+  Added borders to fill entire li so user can click on the rows*/
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~ Layout ~~~~~~~~~~~~~~~~~~~~~~~*/
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+footer {
+  clear: both;
+}
+
+header,
+section,
+aside,
+footer {
+  padding: 20px;
+} /*pre-made formatting styles*/
+
+/*~~~~~~~~~~~~~~~~~~~~~~~ Header and footer  ~~~~~~~~~~~~~~~~~~~~~~~*/
+
+header,
+footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66; /*pre-made footer styles*/
+}
